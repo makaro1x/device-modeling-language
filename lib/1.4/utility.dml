@@ -236,10 +236,10 @@ template _init_val_hard_reset is (init_val, hard_reset) {
 template hreset is hard_reset {
     port HRESET {
         implement signal {
-            method signal_raise() {
+            method signal_raise() default {
                 dev.hard_reset();
             }
-            method signal_lower() {
+            method signal_lower() default {
             }
         }
     }
